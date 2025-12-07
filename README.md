@@ -44,12 +44,14 @@
 
 5.Сгенерируйте документацию к модулю с помощью terraform-docs.
 Пример вызова:
+
 module "vpc_dev" {
   source       = "./vpc"
   env_name     = "develop"
   zone = "ru-central1-a"
   cidr = "10.0.1.0/24"
 }
+
 ### Ответ.
 <img width="458" height="384" alt="Задание 2(1)" src="https://github.com/user-attachments/assets/7e4f9e03-0bf8-42ed-8fab-50c12094fb0c" />
 
