@@ -69,3 +69,18 @@ module "vpc_dev" {
 
 ### Ответ.
 
+<img width="480" height="158" alt="Задание 3(1)" src="https://github.com/user-attachments/assets/c8648fee-d15c-4d5e-8d77-f669346bf4be" />
+
+<img width="462" height="112" alt="Задание 3(2)" src="https://github.com/user-attachments/assets/2caab98f-061f-4742-8125-4de17ddae0ac" />
+
+<img width="458" height="59" alt="Задание 3(3)" src="https://github.com/user-attachments/assets/86351844-385e-4a79-b676-de50d97b5624" />
+
+<img width="506" height="106" alt="Задание 3(4)" src="https://github.com/user-attachments/assets/e47e8ef7-a4a8-4ae7-bf23-293f7e79c6cf" />
+
+<img width="510" height="241" alt="Задание 3(5)" src="https://github.com/user-attachments/assets/0cbd620f-0922-43e3-a91d-a9f81575b23f" />
+
+Вывод команд (см. вывод команд задание 3)
+
+
+
+
