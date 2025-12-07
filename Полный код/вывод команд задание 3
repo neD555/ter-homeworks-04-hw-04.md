@@ -1,0 +1,102 @@
+den@rmq01:~/terraform-hw-04$ terraform state rm module.vpc_dev.yandex_vpc_network.this
+Removed module.vpc_dev.yandex_vpc_network.this
+Successfully removed 1 resource instance(s).
+den@rmq01:~/terraform-hw-04$ terraform state rm module.vpc_dev.yandex_vpc_subnet.this
+Removed module.vpc_dev.yandex_vpc_subnet.this
+Successfully removed 1 resource instance(s).
+den@rmq01:~/terraform-hw-04$ terraform state list
+data.template_file.cloud_init
+data.yandex_compute_image.ubuntu_2004
+yandex_compute_instance.analytics
+yandex_compute_instance.marketing
+den@rmq01:~/terraform-hw-04$ terraform state rm yandex_compute_instance.marketing
+Removed yandex_compute_instance.marketing
+Successfully removed 1 resource instance(s).
+den@rmq01:~/terraform-hw-04$ terraform state rm yandex_compute_instance.analytics
+Removed yandex_compute_instance.analytics
+Successfully removed 1 resource instance(s).
+den@rmq01:~/terraform-hw-04$ terraform state list
+data.template_file.cloud_init
+data.yandex_compute_image.ubuntu_2004
+den@rmq01:~/terraform-hw-04$ terraform import module.vpc_dev.yandex_vpc_network.this enpafgdm8mkislm3n7o6
+data.template_file.cloud_init: Reading...
+data.template_file.cloud_init: Read complete after 0s [id=71497f9cd336d1517cc4d79de8f7ced141a6476d1b05fb9d0e2c1d872a3bbbaf]
+module.vpc_dev.yandex_vpc_network.this: Importing from ID "enpafgdm8mkislm3n7o6"...
+module.vpc_dev.yandex_vpc_network.this: Import prepared!
+  Prepared yandex_vpc_network for import
+data.yandex_compute_image.ubuntu_2004: Reading...
+module.vpc_dev.yandex_vpc_network.this: Refreshing state... [id=enpafgdm8mkislm3n7o6]
+data.yandex_compute_image.ubuntu_2004: Read complete after 1s [id=fd8lep3cnkb8b1u4q744]
+
+Import successful!
+
+The resources that were imported are shown above. These resources are now in
+your Terraform state and will henceforth be managed by Terraform.
+
+den@rmq01:~/terraform-hw-04$ terraform import module.vpc_dev.yandex_vpc_subnet.this e9bpbi7jgqrgde8bnmdh
+data.template_file.cloud_init: Reading...
+data.template_file.cloud_init: Read complete after 0s [id=71497f9cd336d1517cc4d79de8f7ced141a6476d1b05fb9d0e2c1d872a3bbbaf]
+data.yandex_compute_image.ubuntu_2004: Reading...
+module.vpc_dev.yandex_vpc_subnet.this: Importing from ID "e9bpbi7jgqrgde8bnmdh"...
+module.vpc_dev.yandex_vpc_subnet.this: Import prepared!
+  Prepared yandex_vpc_subnet for import
+module.vpc_dev.yandex_vpc_subnet.this: Refreshing state... [id=e9bpbi7jgqrgde8bnmdh]
+data.yandex_compute_image.ubuntu_2004: Read complete after 0s [id=fd8lep3cnkb8b1u4q744]
+
+Import successful!
+
+The resources that were imported are shown above. These resources are now in
+your Terraform state and will henceforth be managed by Terraform.
+
+den@rmq01:~/terraform-hw-04$ terraform import yandex_compute_instance.marketing fhm2qsh8dolkepkr7tun
+data.template_file.cloud_init: Reading...
+data.template_file.cloud_init: Read complete after 0s [id=71497f9cd336d1517cc4d79de8f7ced141a6476d1b05fb9d0e2c1d872a3bbbaf]
+data.yandex_compute_image.ubuntu_2004: Reading...
+data.yandex_compute_image.ubuntu_2004: Read complete after 0s [id=fd8lep3cnkb8b1u4q744]
+yandex_compute_instance.marketing: Importing from ID "fhm2qsh8dolkepkr7tun"...
+yandex_compute_instance.marketing: Import prepared!
+  Prepared yandex_compute_instance for import
+yandex_compute_instance.marketing: Refreshing state... [id=fhm2qsh8dolkepkr7tun]
+
+Import successful!
+
+The resources that were imported are shown above. These resources are now in
+your Terraform state and will henceforth be managed by Terraform.
+
+den@rmq01:~/terraform-hw-04$ terraform import yandex_compute_instance.analytics fhm1rofo6ohndmqsp463
+data.template_file.cloud_init: Reading...
+data.template_file.cloud_init: Read complete after 0s [id=71497f9cd336d1517cc4d79de8f7ced141a6476d1b05fb9d0e2c1d872a3bbbaf]
+data.yandex_compute_image.ubuntu_2004: Reading...
+data.yandex_compute_image.ubuntu_2004: Read complete after 1s [id=fd8lep3cnkb8b1u4q744]
+yandex_compute_instance.analytics: Importing from ID "fhm1rofo6ohndmqsp463"...
+yandex_compute_instance.analytics: Import prepared!
+  Prepared yandex_compute_instance for import
+yandex_compute_instance.analytics: Refreshing state... [id=fhm1rofo6ohndmqsp463]
+
+Import successful!
+
+The resources that were imported are shown above. These resources are now in
+your Terraform state and will henceforth be managed by Terraform.
+
+den@rmq01:~/terraform-hw-04$ terraform state list
+data.template_file.cloud_init
+data.yandex_compute_image.ubuntu_2004
+yandex_compute_instance.analytics
+yandex_compute_instance.marketing
+module.vpc_dev.yandex_vpc_network.this
+module.vpc_dev.yandex_vpc_subnet.this
+den@rmq01:~/terraform-hw-04$ terraform plan
+data.template_file.cloud_init: Reading...
+data.template_file.cloud_init: Read complete after 0s [id=71497f9cd336d1517cc4d79de8f7ced141a6476d1b05fb9d0e2c1d872a3bbbaf]
+data.yandex_compute_image.ubuntu_2004: Reading...
+module.vpc_dev.yandex_vpc_network.this: Refreshing state... [id=enpafgdm8mkislm3n7o6]
+data.yandex_compute_image.ubuntu_2004: Read complete after 0s [id=fd8lep3cnkb8b1u4q744]
+module.vpc_dev.yandex_vpc_subnet.this: Refreshing state... [id=e9bpbi7jgqrgde8bnmdh]
+yandex_compute_instance.marketing: Refreshing state... [id=fhm2qsh8dolkepkr7tun]
+yandex_compute_instance.analytics: Refreshing state... [id=fhm1rofo6ohndmqsp463]
+
+No changes. Your infrastructure matches the configuration.
+
+Terraform has compared your real infrastructure against your configuration and
+found no differences, so no changes are needed.
+den@rmq01:~/terraform-hw-04$
