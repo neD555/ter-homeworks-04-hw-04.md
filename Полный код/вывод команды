@@ -1,1 +1,188 @@
+den@rmq01:~/terraform-hw-04$ terraform console
+> module.marketing_vm
+{
+  "all" = [
+    {
+      "allow_recreate" = tobool(null)
+      "allow_stopping_for_update" = true
+      "boot_disk" = tolist([
+        {
+          "auto_delete" = true
+          "device_name" = "fhm6qtab9u60kjref9c0"
+          "disk_id" = "fhm6qtab9u60kjref9c0"
+          "initialize_params" = tolist([
+            {
+              "block_size" = 4096
+              "description" = ""
+              "image_id" = "fd8lep3cnkb8b1u4q744"
+              "kms_key_id" = ""
+              "name" = ""
+              "size" = 10
+              "snapshot_id" = ""
+              "type" = "network-hdd"
+            },
+          ])
+          "mode" = "READ_WRITE"
+        },
+      ])
+      "created_at" = "2025-12-07T14:28:06Z"
+      "description" = "TODO: description; {{terraform yyy managed}}"
+      "filesystem" = toset([])
+      "folder_id" = "b1ghtgo92hqnuj1kv2ao"
+      "fqdn" = "marketing-marketing-0.ru-central1.internal"
+      "gpu_cluster_id" = ""
+      "hardware_generation" = tolist([
+        {
+          "generation2_features" = tolist([])
+          "legacy_features" = tolist([
+            {
+              "pci_topology" = "PCI_TOPOLOGY_V2"
+            },
+          ])
+        },
+      ])
+      "hostname" = "marketing-marketing-0"
+      "id" = "fhm87kj3tj5o5mvura8c"
+      "labels" = tomap({
+        "project" = "marketing"
+      })
+      "local_disk" = tolist([])
+      "maintenance_grace_period" = ""
+      "maintenance_policy" = tostring(null)
+      "metadata" = tomap({
+        "serial-port-enable" = "1"
+        "user-data" = <<-EOT
+        #cloud-config
+
+        users:
+          - name: ubuntu
+            groups: sudo
+            shell: /bin/bash
+            sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+            ssh-authorized-keys:
+              - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINwDlw8SPFFvDWxzyZiThG/2COif0auGHXVu7C93VzK7
+
+        package_update: true
+        package_upgrade: false
+
+        packages:
+          - nginx
+
+        runcmd:
+          - systemctl enable nginx
+          - systemctl start nginx
+        #cloud-config
+
+        users:
+          - name: ubuntu
+            groups: sudo
+            shell: /bin/bash
+            sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+            ssh-authorized-keys:
+              - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINwDlw8SPFFvDWxzyZiThG/2COif0auGHXVu7C93VzK7
+
+        package_update: true
+        package_upgrade: false
+
+        packages:
+          - nginx
+
+        runcmd:
+          - systemctl enable nginx
+          - systemctl start nginx
+
+        EOT
+      })
+      "metadata_options" = tolist([
+        {
+          "aws_v1_http_endpoint" = 1
+          "aws_v1_http_token" = 2
+          "gce_http_endpoint" = 1
+          "gce_http_token" = 1
+        },
+      ])
+      "name" = "marketing-marketing-0"
+      "network_acceleration_type" = "standard"
+      "network_interface" = tolist([
+        {
+          "dns_record" = tolist([])
+          "index" = 0
+          "ip_address" = "10.0.1.25"
+          "ipv4" = true
+          "ipv6" = false
+          "ipv6_address" = ""
+          "ipv6_dns_record" = tolist([])
+          "mac_address" = "d0:0d:83:d2:63:ec"
+          "nat" = true
+          "nat_dns_record" = tolist([])
+          "nat_ip_address" = "178.154.223.177"
+          "nat_ip_version" = "IPV4"
+          "security_group_ids" = toset(null) /* of string */
+          "subnet_id" = "e9bdsudcuilihjpf4q9t"
+        },
+      ])
+      "placement_policy" = tolist([
+        {
+          "host_affinity_rules" = tolist([])
+          "placement_group_id" = ""
+          "placement_group_partition" = 0
+        },
+      ])
+      "platform_id" = "standard-v1"
+      "resources" = tolist([
+        {
+          "core_fraction" = 5
+          "cores" = 2
+          "gpus" = 0
+          "memory" = 1
+        },
+      ])
+      "scheduling_policy" = tolist([
+        {
+          "preemptible" = true
+        },
+      ])
+      "secondary_disk" = toset([])
+      "service_account_id" = ""
+      "status" = "running"
+      "timeouts" = null /* object */
+      "zone" = "ru-central1-a"
+    },
+  ]
+  "external_ip_address" = [
+    "178.154.223.177",
+  ]
+  "fqdn" = [
+    "marketing-marketing-0.ru-central1.internal",
+  ]
+  "internal_ip_address" = [
+    "10.0.1.25",
+  ]
+  "labels" = [
+    tomap({
+      "project" = "marketing"
+    }),
+  ]
+  "network_interface" = [
+    tolist([
+      {
+        "dns_record" = tolist([])
+        "index" = 0
+        "ip_address" = "10.0.1.25"
+        "ipv4" = true
+        "ipv6" = false
+        "ipv6_address" = ""
+        "ipv6_dns_record" = tolist([])
+        "mac_address" = "d0:0d:83:d2:63:ec"
+        "nat" = true
+        "nat_dns_record" = tolist([])
+        "nat_ip_address" = "178.154.223.177"
+        "nat_ip_version" = "IPV4"
+        "security_group_ids" = toset(null) /* of string */
+        "subnet_id" = "e9bdsudcuilihjpf4q9t"
+      },
+    ]),
+  ]
+}
+> ^C
 
