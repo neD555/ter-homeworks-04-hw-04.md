@@ -30,7 +30,9 @@
 <img width="1488" height="465" alt="Задание 1(1)" src="https://github.com/user-attachments/assets/9492f0b3-6ac6-4289-bfb1-f6ca9a1db217" />
 
 <img width="638" height="54" alt="Задание 1(2)" src="https://github.com/user-attachments/assets/b50a9c97-fb94-4fda-acbf-ab9fbf0dfbb5" />
+
 3-й скриншот(см. вывод команды)
+
 ### Задание 2.
 1.Напишите локальный модуль vpc, который будет создавать 2 ресурса: одну сеть и одну подсеть в зоне, объявленной при вызове модуля, например: ru-central1-a.
 
